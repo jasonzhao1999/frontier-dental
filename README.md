@@ -49,7 +49,7 @@ You need Python 3.10+ and optionally an Anthropic API key (for the LLM-based cla
 
 ```bash
 git clone <repo-url>
-cd fronter_dental
+cd frontier_dental
 python -m venv .venv
 source .venv/bin/activate   # .venv\Scripts\activate on Windows
 pip install -r requirements.txt
