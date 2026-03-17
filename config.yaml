@@ -1,0 +1,30 @@
+# Safco Dental scraper configuration
+
+target:
+  base_url: "https://www.safcodental.com"
+  seed_categories:
+    - "/catalog/sutures-surgical-products"
+    - "/catalog/gloves"
+
+scraping:
+  # Seconds between requests (be polite)
+  request_delay: 1.5
+  max_retries: 3
+  timeout: 30
+  # Max concurrent detail-page fetches
+  max_concurrency: 3
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+llm:
+  model: "claude-sonnet-4-20250514"
+  # Keep token usage low for a POC
+  max_tokens: 1024
+
+storage:
+  db_path: "output/products.db"
+  export_json: "output/products.json"
+  export_csv: "output/products.csv"
+
+logging:
+  level: "INFO"
+  file: "output/scraper.log"
